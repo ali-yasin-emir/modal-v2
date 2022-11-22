@@ -1,0 +1,133 @@
+:root {
+  --clr-text: #fff;
+  --clr-bg-dark: #242424;
+  --clr-bg-light: #3b3b3b;
+  --clr-accent: #ff7600;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: sans-serif;
+  line-height: 1.5;
+  color: var(--clr-text);
+  background-color: var(--clr-bg-dark);
+  overflow: hidden;
+  background-image: url(./bg.jpg);
+  background-position: 0rem -4rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+main {
+  margin: 32em auto;
+  max-width: fit-content;
+  background-color: var(--clr-accent);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 7.2rem;
+  padding: 2.4em 6.4em;
+  box-shadow: 2px 8px 12px 10px #ff510031;
+  position: relative;
+}
+
+h1 {
+  color: var(--clr-bg-dark);
+  text-transform: capitalize;
+  font-size: 3.6rem;
+}
+
+.btn {
+  border: 0;
+  cursor: pointer;
+  text-transform: capitalize;
+  color: var(--clr-accent);
+  padding: 0.6em 0.8em;
+  background-color: var(--clr-bg-dark);
+}
+
+.btn:hover {
+  color: var(--clr-bg-dark);
+  background-color: var(--clr-text);
+  box-shadow: 0px 0px 0px 1px var(--clr-bg-dark);
+}
+
+.modal {
+  visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2.4em;
+  max-width: 64rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 8em 4em;
+  background-color: var(--clr-text);
+  color: var(--clr-bg-dark);
+  font-size: clump(1rem, 1.2rem, 2rem);
+}
+
+.modal-header {
+  text-align: center;
+  text-transform: capitalize;
+  font-size: 2.4rem;
+  color: var(--clr-accent);
+}
+
+.modal-text {
+  font-size: 1.4rem;
+  text-align: justify;
+}
+
+.modal-exit {
+  visibility: hidden;
+  position: absolute;
+  width: 2.8rem;
+  height: 2.8rem;
+  right: 0;
+  top: 0;
+  padding-top: 1.8em;
+  padding-right: 1.8em;
+  stroke: var(--clr-accent);
+  cursor: pointer;
+}
+
+@media (max-width: 1080px) {
+  .modal {
+    max-width: 56rem;
+    min-height: 20rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .modal {
+    width: 100%;
+    padding: 2em 4em;
+    font-size: clump(1rem, 1.2rem, 2rem);
+  }
+
+  .modal-exit {
+    padding: 1.2em 5.6em 0em 0em;
+    width: 2.4em;
+    height: 2.4em;
+  }
+
+  .modal-text {
+    padding: 0em 2em;
+  }
+}
